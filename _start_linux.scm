@@ -22,6 +22,5 @@
 (every-frame
     ;(begin (display (midi-peek)) (newline))
     (pulse base_dir shapeOne shapeTwo shapeThree RedLightness GreenLightness BlueLightness Scale RotX RotY RotZ)
-    
     ;(mappingSchema base_dir RedLightness GreenLightness BlueLightness Scale RotX RotY RotZ)
 )
