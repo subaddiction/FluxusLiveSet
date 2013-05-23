@@ -20,6 +20,18 @@
 	
 )
 
+
+; Testing calls
+;;;(define (testConf)
+;;;	(desiredfps 24)
+;;;	(gain 0.5)
+;;;	(set! baseScale 100)
+;;;	(colorSchema 8 6 8)
+;;;	(transformSchema 100 0 0 0)
+;;;)
+;;;(when (key-pressed ".") (testConf))
+
+
 ; Shape schemes
 (when (key-pressed "q") (shapeSchema hexA piramidiring triangolisphere))
 
@@ -35,21 +47,21 @@
 
 (when (key-pressed "u") (shapeSchema triangolo triangoliring piramidisphere))
 
-(when (key-pressed "i") (shapeSchema megatron piramidiring triangolisphere))
+(when (key-pressed "i") (shapeSchema electroswingitalia piramidiring triangolisphere))
 
 (when (key-pressed "o") (shapeSchema triangolo triangolisphere piramidiring))
 
-(when (key-pressed "p") (shapeSchema megatron triangoliring piramidisphere))
+(when (key-pressed "p") (shapeSchema electroswingitalia triangoliring piramidisphere))
 
 
 
 
 
-(when (key-pressed "a") (shapeSchema megatron triangoliring bigring))
+(when (key-pressed "a") (shapeSchema electroswingitalia triangoliring bigring))
 
 (when (key-pressed "s") (shapeSchema nautilus piramidiring triangolisphere))
 
-(when (key-pressed "d") (shapeSchema megatron triangoliring piramidiring))
+(when (key-pressed "d") (shapeSchema electroswingitalia triangoliring piramidiring))
 
 (when (key-pressed "f") (shapeSchema hexA smallring piramidiring))
 

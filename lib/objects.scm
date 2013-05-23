@@ -56,8 +56,8 @@
 
 
 ; CREWS
-(define megatron (with-state (load-primitive (string-append base_dir "obj/megatron.obj"))))
-(with-primitive megatron (hide 1))
+(define electroswingitalia (with-state (load-primitive (string-append base_dir "obj/electroswingitalia.obj"))))
+(with-primitive electroswingitalia (hide 1))
 
 (define subaddiction (with-state (load-primitive (string-append base_dir "obj/subaddiction.obj"))))
 (with-primitive subaddiction (hide 1))

@@ -4,7 +4,7 @@
 
 
 ; Base directory
-(define base_dir "/home/mrk25/fluxus/fluxusMegatron/")
+(define base_dir "/usr/local/share/FluxusLiveSet/")
 
 ; Include general config
 (load (string-append base_dir "lib/config_linux.scm"))
