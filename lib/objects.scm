@@ -1,4 +1,52 @@
 (clear)
+(clear-texture-cache)
+;(opacity 0.1)
+
+;BACKGROUNDZ
+;(define BG00 (with-state
+;		(texture (load-texture (string-append base_dir "textures/test.png")))
+;		;(texture-params 0 '(wrap-s repeat wrap-t repeat))
+;		
+;		(scale (vector 2.4 1.6 0))
+;		(translate (vector 0 0 -10))
+;	(build-plane)))
+
+
+;PARTICLE SYSTEMS
+
+; util func to return a random vector
+(define (rndvec)
+    (vsub (vector (flxrnd) (flxrnd) (flxrnd)) 
+        (vector 0.5 0.5 0.5)))
+        
+(define prtclSys (with-state (build-particles 1024)))
+
+
+(with-primitive prtclSys
+
+    ;(texture (load-texture (string-append base_dir "textures/test.png")))
+    ;(hint-points)
+	
+;	(specular (vector 0 0 0))
+;	(ambient (vector 0 0 0))
+;	(emissive (vector 1 0 0))
+;	(shinyness 0.5)	
+
+	; add the velocity pdata 
+	(pdata-add "vel" "v")
+	; init all the velocities
+	(pdata-map! (lambda (vel) (vmul (rndvec) 1)) "vel")
+	
+	(pdata-map! (lambda (s) (vector .5 .5 .5)) "s")
+	; init all the colours
+	;(pdata-map! (lambda (c) (vector 0 0 0)) "c")
+
+  
+    
+)
+
+
+;(texture-params 0 '(tex-env replace))
 
 ; BASE SHAPES
 (define kube (with-state (load-primitive (string-append base_dir "obj/kube.obj"))))
@@ -76,6 +124,13 @@
 ;(define yo (with-state (load-primitive (string-append base_dir "obj/yo.obj"))))
 
 
+
+    
+    
+
+
+
+
 ;Add objects to library with:
 ;(define objID (with-state (load-primitive (string-append base_dir "obj/objFile.obj"))))
 
@@ -101,4 +156,15 @@
 (define RotX -60)
 (define RotY 60)
 (define RotZ -60)
+
+(define accumRot0 (vector 0 0 0))
+(define accumRot1 (vector 0 0 0))
+(define accumRot2 (vector 0 0 0))
+
+(define beatThreshold 1)
+(define metronome 0)
+(define timeFrame 6)
+(define lastTimeframePeaks 0)
+(define peaksDensity 0)
+(define nucleus 0)
 

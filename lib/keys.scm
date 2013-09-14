@@ -12,6 +12,9 @@
 	; knob3
 	(set! baseScale (* 100 (midi-ccn 2 10)))
 	
+	; knob4
+	(set! beatThreshold (* 100 (midi-ccn 3 10)))
+	
 	; Fader 1 2 3 RGB
 	(colorSchema (midi-ccn 0 7) (midi-ccn 1 7) (midi-ccn 2 7))
 	
@@ -90,6 +93,101 @@
 (when (key-pressed "n") (shapeSchema subaddiction triangoliring bigring))
 
 (when (key-pressed "m") (shapeSchema subaddiction triangolisphere triangolisphere))
+
+
+(when (key-pressed ",")
+	(set! accumRot0 (vector 0 0 0))
+	(set! accumRot1 (vector 0 0 0))
+	(set! accumRot2 (vector 0 0 0))
+	)
+
+;(when (key-pressed "1")
+;	(with-primitive prtcl01
+;		(pdata-map! (lambda (vel) (vmul (rndvec) 2)) "vel")
+;		(pdata-map! (lambda (p) (vmul (rndvec) 3)) "p")
+;		(particlesReset prtcl01)
+;		)
+;	)
+
+;particle sysytems
+
+(when (key-pressed ".")
+	(with-primitive prtclSys
+		(clear-texture-cache)
+	)
+	(particlesReset)
+)
+
+(when (key-pressed "1")
+	(with-primitive prtclSys
+		(texture (load-texture ""))
+		;(pdata-map! (lambda (c) (vector (gh 0) (gh 4) (gh 8))) "c")
+	)
+	(particlesReset)
+)
+
+(when (key-pressed "2")
+	(with-primitive prtclSys
+		(texture (load-texture (string-append base_dir "textures/texture2.png")))
+	)
+	(particlesReset)
+)
+
+(when (key-pressed "3")
+	(with-primitive prtclSys
+		(texture (load-texture (string-append base_dir "textures/texture3.png")))
+	)
+	(particlesReset)
+)
+
+(when (key-pressed "4")
+	(with-primitive prtclSys
+		(texture (load-texture (string-append base_dir "textures/texture4.png")))
+	)
+	(particlesReset)
+)
+
+(when (key-pressed "5")
+	(with-primitive prtclSys
+		(texture (load-texture (string-append base_dir "textures/texture5.png")))
+	)
+	(particlesReset)
+)
+
+(when (key-pressed "6")
+	(with-primitive prtclSys
+		(texture (load-texture (string-append base_dir "textures/texture6.png")))
+	)
+	(particlesReset)
+)
+
+(when (key-pressed "7")
+	(with-primitive prtclSys
+		(texture (load-texture (string-append base_dir "textures/texture7.png")))
+	)
+	(particlesReset)
+)
+
+(when (key-pressed "8")
+	(with-primitive prtclSys
+		(texture (load-texture (string-append base_dir "textures/texture8.png")))
+	)
+	(particlesReset)
+)
+
+(when (key-pressed "9")
+	(with-primitive prtclSys
+		(texture (load-texture (string-append base_dir "textures/texture9.png")))
+	)
+	(particlesReset)
+)
+
+(when (key-pressed "0")
+	(with-primitive prtclSys
+		(texture (load-texture (string-append base_dir "textures/texture0.png")))
+	)
+	(particlesReset)
+)
 
 
 
