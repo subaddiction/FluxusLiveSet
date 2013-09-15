@@ -19,6 +19,11 @@
     (vsub (vector (flxrnd) (flxrnd) (flxrnd)) 
         (vector 0.5 0.5 0.5)))
         
+; util function to return a random value
+(define (rndval)
+    (- (flxrnd) 
+        0.5))
+        
 (define prtclSys (with-state (build-particles 1024)))
 
 
@@ -30,13 +35,20 @@
 ;	(specular (vector 0 0 0))
 ;	(ambient (vector 0 0 0))
 ;	(emissive (vector 1 0 0))
-;	(shinyness 0.5)	
+;	(shinyness 0.5)
 
+	(translate (vector 0 0 0))
+	
+	;(pdata-add "initialVelocityState" "i")
+	;(pdata-map! (lambda (initialVelocityState) (vmul (rndvec) 1)) "initialVelocityState")
+	;(pdata-set!)
+	
 	; add the velocity pdata 
 	(pdata-add "vel" "v")
 	; init all the velocities
 	(pdata-map! (lambda (vel) (vmul (rndvec) 1)) "vel")
 	
+	;init particles size
 	(pdata-map! (lambda (s) (vector .5 .5 .5)) "s")
 	; init all the colours
 	;(pdata-map! (lambda (c) (vector 0 0 0)) "c")
@@ -44,6 +56,74 @@
   
     
 )
+
+;(with-primitive prtclSys (hide 1))
+
+
+(define prtclSys2 (with-state (build-particles 512)))
+
+(with-primitive prtclSys2
+	
+	(translate (vector 0 0 0))
+	
+	; add the velocity pdata 
+	(pdata-add "vel" "v")
+	
+	; set particles size
+	(pdata-map! (lambda (s) (vector .5 .5 .5)) "s")
+
+
+  
+    
+)
+(define prtclSys2Color (vector 1 1 1))
+;(with-primitive prtclSys2 (hide 1))
+
+
+
+(define prtclSys3 (with-state (build-particles 512)))
+
+(with-primitive prtclSys3
+	
+	(translate (vector 0 0 0))
+	
+	; add the velocity pdata 
+	(pdata-add "vel" "v")
+	
+	; set particles size
+	(pdata-map! (lambda (s) (vector .5 .5 .5)) "s")
+
+
+  
+    
+)
+(define prtclSys3Color (vector 1 1 1))
+;(with-primitive prtclSys2 (hide 1))
+
+
+
+(define prtclSys4 (with-state (build-particles 512)))
+
+(with-primitive prtclSys4
+	
+	(translate (vector 0 0 0))
+	
+	; add the velocity pdata 
+	(pdata-add "vel" "v")
+	
+	; set particles size
+	(pdata-map! (lambda (s) (vector .5 .5 .5)) "s")
+
+
+  
+    
+)
+(define prtclSys4Color (vector 1 1 1))
+;(with-primitive prtclSys3 (hide 1))
+
+
+
+
 
 
 ;(texture-params 0 '(tex-env replace))
@@ -167,4 +247,4 @@
 (define lastTimeframePeaks 0)
 (define peaksDensity 0)
 (define nucleus 0)
-
+(define psysInterference 0)

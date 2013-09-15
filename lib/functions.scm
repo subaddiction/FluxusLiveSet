@@ -31,14 +31,8 @@
 ;    (set! midiBlur midiValue)
 ;)
 
-;particle sysyem reset
-(define (particlesReset)
-	(with-primitive prtclSys
-	(opacity 0)
-	(pdata-map! (lambda (vel) (vmul (rndvec) 2)) "vel")
-	(pdata-map! (lambda (p) (vmul (rndvec) 3)) "p")
-	)
-)
+
+
 
 
 
@@ -76,7 +70,62 @@
 		)
 )
 
-; Primitive movement
+
+
+
+;particle sysyem reset
+(define (particlesReset System)
+	(with-primitive System
+		;(opacity 0)
+		;(pdata-map! (lambda (vel) (vmul (rndvec) 2)) "vel")
+		;(pdata-map! (lambda (p) (vmul (rndvec) 3)) "p")
+		
+		(pdata-map! (lambda (s) (vector .5 .5 .5)) "s")
+		
+		(pdata-map! (lambda (p) (vector 0 0 0)) "p")
+		(pdata-map! (lambda (vel) (vector 0 0 0)) "vel")
+		;(pdata-map! (lambda (vel) (pdata-get "System" 0)) "vel")
+		
+		
+
+	
+	)
+	
+	(if (> psysInterference 0)
+			(with-primitive prtclSys (pdata-map! (lambda (vel) (vmul (rndvec) 1)) "vel") )
+			(set! psysInterference 0)
+	)
+)
+
+
+(define (psysVelReset)
+	(with-primitive prtclSys
+		(pdata-map! (lambda (vel) (vmul (rndvec) 2)) "vel")	
+	)
+	
+)
+
+(define (psys2VelReset)
+	(with-primitive prtclSys2
+		(lambda (vel) (vadd vel (vector 0 (* .1 (rndval) (gh 0)) (* .1 (rndval) (gh 0)))))
+	)
+)
+
+(define (psys3VelReset)
+	(with-primitive prtclSys3
+		(lambda (vel) (vadd vel (vector (* .1 (rndval) (gh 0)) (* .1 (rndval) (gh 0)) 0)))
+	)
+)
+
+(define (psys4VelReset)
+	(with-primitive prtclSys4
+		(lambda (vel) (vadd vel (vector (* .1 (rndval) (gh 0)) 0 (* .1 (rndval) (gh 0)))))
+	)
+)
+
+
+
+; Primitives movement
 (define (pulse base_dir shapeOne shapeTwo shapeThree pulseRedLightness pulseGreenLightness pulseBlueLightness pulseScale pulseRotX pulseRotY pulseRotZ)
     
     ;Detect peaks density
@@ -90,25 +139,125 @@
     (scale (vector 0.0001 0.0001 0.0001))
     
     
-    	;manipulate particle systems pdata
-    	(with-primitive prtclSys
-    	
-    	(rotate (vector (* 0.01 (gh 0) pulseRotX) (* 0.01 (gh 0) pulseRotY) (* 0.01 (gh 0) pulseRotZ)))
-    	
-    	;Colorize particles
-    	(pdata-map! (lambda (c) (vector (gh 0) (gh 4) (gh 8))) "c")
-    	
-        ; update the velocities
-        (pdata-map! 
-            ;(lambda (vel) (vadd vel (vector 0 0 0.001)))
-            (lambda (vel) (vadd vel (vector 0 0 (* 0.000001 (gh 8) pulseScale))))
-            ;(vector (* (gh 0) pulseScale) (* (gh 0) pulseScale) (* (gh 0) pulseScale))
-            "vel")
+    		;manipulate particle systems pdata
+	    	(with-primitive prtclSys
+	    	
+	    	(rotate (vector (* 0.01 (gh 0) pulseRotX) (* 0.01 (gh 0) pulseRotY) (* 0.01 (gh 0) pulseRotZ)))
+	    	
+	    	;Colorize particles
+	    	(pdata-map! (lambda (c) (vector (gh 0) (gh 4) (gh 8))) "c")
+	    	
+		; update the velocities
+		(pdata-map! 
+		   ;(lambda (vel) (vmul (rndvec) 1))
+		   (lambda (vel) (vadd vel (vector (* 0.000001 (gh 8) pulseScale) (* 0.000001 (gh 8) pulseScale) (* 0.000001 (gh 8) pulseScale))))
+		   ;(vector (* (gh 0) pulseScale) (* (gh 0) pulseScale) (* (gh 0) pulseScale))
+		   "vel")
 
-        ; update the positions 
-        ; (add the velocities onto the positions)
-        ;(pdata-map! vadd "p" "vel")) 
-        (pdata-map! vadd "p" "vel")) 
+		; update the positions 
+		; (add the velocities onto the positions)
+		;(pdata-map! vadd "p" "vel")) 
+		(pdata-map! vadd "p" "vel")
+        )
+        
+        
+        
+        
+        
+        
+        
+        
+        (with-primitive prtclSys2
+        
+		;(with-state (translate (vector 0 0 -5)))
+	    	
+	    	;(translate (vector 0 0 0))
+	    	(rotate (vector 0 (/ (gh 0) 3) (/ (gh 0) 6)))
+	    	;(rotate (vector (* 0.01 (gh 8) pulseRotX) (* 0.01 (gh 8) pulseRotY) (* 0.01 (gh 8) pulseRotZ)))
+	    	
+	    	;Colorize particles
+	    	;(pdata-map! (lambda (c) (vector (gh 0) (gh 4) (gh 8))) "c")
+	    	(pdata-map! (lambda (c) (vmul prtclSys2Color (* .1 (gh 0)))) "c")
+	    	
+		; update the velocities
+		(pdata-map! 
+		    (lambda (vel) (vadd vel (vector 0 (* .1 (rndval) (gh 0)) (* .1 (rndval) (gh 0))))) ; (* .01 (rndval) (gh 0))
+		    
+		    ;lambda (vel) (vadd vel (vector .1 .1 .1)))
+		    ;(vector (* (gh 0) pulseScale) (* (gh 0) pulseScale) (* (gh 0) pulseScale))
+		    "vel")
+
+		; update the positions
+		(pdata-map! vadd "p" "vel")
+        
+        ) 
+        
+        
+        
+        
+        (with-primitive prtclSys3
+        
+		;(with-state (translate (vector 0 0 -5)))
+	    	
+	    	;(translate (vector 0 0 0))
+	    	(rotate (vector (/ (gh 0) -3) (/ (gh 0) 6) 0))
+	    	;(rotate (vector (* 0.01 (gh 8) pulseRotX) (* 0.01 (gh 8) pulseRotY) (* 0.01 (gh 8) pulseRotZ)))
+	    	
+	    	;Colorize particles
+	    	;(pdata-map! (lambda (c) (vector (gh 0) (gh 4) (gh 8))) "c")
+	    	(pdata-map! (lambda (c) (vmul prtclSys3Color (* .1 (gh 0)))) "c")
+	    	
+		; update the velocities
+		(pdata-map! 
+		    (lambda (vel) (vadd vel (vector (* .1 (rndval) (gh 0)) (* .1 (rndval) (gh 0)) 0))) ; (* .01 (rndval) (gh 0))
+		    
+		    ;lambda (vel) (vadd vel (vector .1 .1 .1)))
+		    ;(vector (* (gh 0) pulseScale) (* (gh 0) pulseScale) (* (gh 0) pulseScale))
+		    "vel")
+
+		; update the positions
+		(pdata-map! vadd "p" "vel")
+        
+        )
+        
+        
+        
+        
+        
+        
+        (with-primitive prtclSys4
+        
+		;(with-state (translate (vector 0 0 -5)))
+	    	
+	    	;(translate (vector 0 0 0))
+	    	(rotate (vector (/ (gh 0) -6) 0 (/ (gh 0) -3)))
+	    	;(rotate (vector (* 0.01 (gh 8) pulseRotX) (* 0.01 (gh 8) pulseRotY) (* 0.01 (gh 8) pulseRotZ)))
+	    	
+	    	;Colorize particles
+	    	;(pdata-map! (lambda (c) (vector (gh 0) (gh 4) (gh 8))) "c")
+	    	(pdata-map! (lambda (c) (vmul prtclSys4Color (* .1 (gh 0)))) "c")
+	    	
+		; update the velocities
+		(pdata-map! 
+		    (lambda (vel) (vadd vel (vector (* .1 (rndval) (gh 0)) 0 (* .1 (rndval) (gh 0))))) ; (* .01 (rndval) (gh 0))
+		    
+		    ;lambda (vel) (vadd vel (vector .1 .1 .1)))
+		    ;(vector (* (gh 0) pulseScale) (* (gh 0) pulseScale) (* (gh 0) pulseScale))
+		    "vel")
+
+		; update the positions
+		(pdata-map! vadd "p" "vel")
+        
+        ) 
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         ; Animate shapes
         (scale (vector (* (gh 0) pulseScale) (* (gh 0) pulseScale) (* (gh 0) pulseScale)))
@@ -156,12 +305,15 @@
         
         
         ;(begin (display (gh 0)) (newline))
-        (begin (display beatThreshold) (newline))
         ;(begin (display metronome) (newline))
         ;(begin (display time) (newline))
         ;(begin (display delta) (newline))
-        (begin (display lastTimeframePeaks) (newline))
         ;(begin (display peaksDensity) (newline))
+        
+        ;(begin (display lastTimeframePeaks) (newline))
+        ;(begin (display beatThreshold) (newline))
+        
+        (begin (display psysInterference) (newline))
     
 )
 
