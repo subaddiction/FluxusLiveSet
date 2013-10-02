@@ -20,9 +20,7 @@
         (vector 0.5 0.5 0.5)))
         
 ; util function to return a random value
-(define (rndval)
-    (- (flxrnd) 
-        0.5))
+(define (rndval) (- (flxrnd) 0.5))
         
 (define prtclSys (with-state (build-particles 1024)))
 
@@ -31,6 +29,11 @@
 
     ;(texture (load-texture (string-append base_dir "textures/test.png")))
     ;(hint-points)
+    	
+    	;(texture-params 0 '(tex-env modulate))
+    	;(texture-params 0 '(tex-env decal))
+    	;(texture-params 0 '(tex-env blend))
+    	;(texture-params 0 '(tex-env replace))
 	
 ;	(specular (vector 0 0 0))
 ;	(ambient (vector 0 0 0))
@@ -51,7 +54,7 @@
 	;init particles size
 	(pdata-map! (lambda (s) (vector .5 .5 .5)) "s")
 	; init all the colours
-	;(pdata-map! (lambda (c) (vector 0 0 0)) "c")
+	(pdata-map! (lambda (c) (vector 0 0 0 0)) "c")
 
   
     

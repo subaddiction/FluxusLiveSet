@@ -139,13 +139,13 @@
     (scale (vector 0.0001 0.0001 0.0001))
     
     
-    		;manipulate particle systems pdata
-	    	(with-primitive prtclSys
+    	;manipulate particle systems pdata
+	(with-primitive prtclSys
 	    	
 	    	(rotate (vector (* 0.01 (gh 0) pulseRotX) (* 0.01 (gh 0) pulseRotY) (* 0.01 (gh 0) pulseRotZ)))
 	    	
 	    	;Colorize particles
-	    	(pdata-map! (lambda (c) (vector (gh 0) (gh 4) (gh 8))) "c")
+	    	(pdata-map! (lambda (c) (vector (gh 0) (gh 4) (gh 8) 1)) "c")
 	    	
 		; update the velocities
 		(pdata-map! 
