@@ -247,13 +247,7 @@
 	
 )
 
-;(when (key-pressed "1")
-;	(with-primitive prtcl01
-;		(pdata-map! (lambda (vel) (vmul (rndvec) 2)) "vel")
-;		(pdata-map! (lambda (p) (vmul (rndvec) 3)) "p")
-;		(particlesReset prtcl01)
-;		)
-;	)
+
 
 ;particle sysytems
 
@@ -374,7 +368,3 @@
 	(particlesReset prtclSys)
 	(psysVelReset)
 )
-
-
-
-

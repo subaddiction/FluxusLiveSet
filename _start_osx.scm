@@ -1,10 +1,11 @@
 ; _start.scm
 ; primo file da caricare.
 ; Definisce directory di lavoro e carica librerie, oggetti e textures.
-
+(clear)
+(reset-camera)
 
 ; Base directory
-(define base_dir "/Users/Shared/fluxus/fluxusMegatron/")
+(define base_dir "/Users/Shared/fluxus/FluxusLiveSet-wobble-01/")
 
 ; Include general config
 (load (string-append base_dir "lib/config_osx.scm"))
@@ -22,5 +23,4 @@
 (every-frame
 	;(begin (display (midi-peek)) (newline))
 	(pulse base_dir shapeOne shapeTwo shapeThree RedLightness GreenLightness BlueLightness Scale RotX RotY RotZ)
-	;(mappingSchema base_dir RedLightness GreenLightness BlueLightness Scale RotX RotY RotZ)
 )

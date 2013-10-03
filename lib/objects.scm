@@ -26,30 +26,11 @@
 
 
 (with-primitive prtclSys
-
-    ;(texture (load-texture (string-append base_dir "textures/test.png")))
-    ;(hint-points)
-    	
-    	;(texture-params 0 '(tex-env modulate))
-    	;(texture-params 0 '(tex-env decal))
-    	;(texture-params 0 '(tex-env blend))
-    	;(texture-params 0 '(tex-env replace))
-	
-;	(specular (vector 0 0 0))
-;	(ambient (vector 0 0 0))
-;	(emissive (vector 1 0 0))
-;	(shinyness 0.5)
-
-	(translate (vector 0 0 0))
-	
-	;(pdata-add "initialVelocityState" "i")
-	;(pdata-map! (lambda (initialVelocityState) (vmul (rndvec) 1)) "initialVelocityState")
-	;(pdata-set!)
 	
 	; add the velocity pdata 
 	(pdata-add "vel" "v")
 	; init all the velocities
-	(pdata-map! (lambda (vel) (vmul (rndvec) 1)) "vel")
+	;(pdata-map! (lambda (vel) (vmul (rndvec) 1)) "vel")
 	
 	;init particles size
 	(pdata-map! (lambda (s) (vector .5 .5 .5)) "s")
@@ -59,15 +40,12 @@
   
     
 )
-
 ;(with-primitive prtclSys (hide 1))
 
 
 (define prtclSys2 (with-state (build-particles 512)))
 
 (with-primitive prtclSys2
-	
-	(translate (vector 0 0 0))
 	
 	; add the velocity pdata 
 	(pdata-add "vel" "v")
@@ -88,8 +66,6 @@
 
 (with-primitive prtclSys3
 	
-	(translate (vector 0 0 0))
-	
 	; add the velocity pdata 
 	(pdata-add "vel" "v")
 	
@@ -108,8 +84,6 @@
 (define prtclSys4 (with-state (build-particles 512)))
 
 (with-primitive prtclSys4
-	
-	(translate (vector 0 0 0))
 	
 	; add the velocity pdata 
 	(pdata-add "vel" "v")
@@ -251,3 +225,5 @@
 (define peaksDensity 0)
 (define nucleus 0)
 (define psysInterference 0)
+
+(define velGain .1)
