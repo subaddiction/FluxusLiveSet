@@ -28,39 +28,39 @@
 
 
 
-(define (btdReset)
+;(define (btdReset)
 
-	;FARE QUI ROBA CON RAPPORTO TRA lastTimeframePeaks e timeFrame
-	(if (> lastTimeframePeaks (/ timeFrame 1.5))
-		(blur 0) ; no blur when > 1/3 of peaks
-		(blur 0.7) ; little blur when < 1/3 peaks
-	)
-	
-	(if (> lastTimeframePeaks (/ timeFrame 2))
-		(set! nucleus 1) ; no blur when > 1/3 of peaks
-		(set! nucleus 0) ; little blur when < 1/3 peaks
-	)
-	
-	(set! peaksDensity (/ lastTimeframePeaks timeFrame))
-	
-	(set! metronome 0)
-	(set! lastTimeframePeaks 0)
-)
+;	;FARE QUI ROBA CON RAPPORTO TRA lastTimeframePeaks e timeFrame
+;	(if (> lastTimeframePeaks (/ timeFrame 1.5))
+;		(blur 0) ; no blur when > 1/3 of peaks
+;		(blur 0.7) ; little blur when < 1/3 peaks
+;	)
+;	
+;	(if (> lastTimeframePeaks (/ timeFrame 2))
+;		(set! nucleus 1) ; no blur when > 1/3 of peaks
+;		(set! nucleus 0) ; little blur when < 1/3 peaks
+;	)
+;	
+;	(set! peaksDensity (/ lastTimeframePeaks timeFrame))
+;	
+;	(set! metronome 0)
+;	(set! lastTimeframePeaks 0)
+;)
 
 ;Beat detect for Particle system reset or direction switch
-(define (beatDetect)
-	
-	(if (> metronome timeFrame)
-	(btdReset)
-	(set! metronome (+ 1 metronome))
-	)
-	
-	;Utilizzare beatThreshold per contare presunti picchi su (gh 0) - negli ultimi 2 secondi
-	(if (> (gh 0) beatThreshold) 
-		(set! lastTimeframePeaks (+ 1 lastTimeframePeaks))
-		(set! lastTimeframePeaks (+ 0 lastTimeframePeaks))
-		)
-)
+;(define (beatDetect)
+;	
+;	(if (> metronome timeFrame)
+;	(btdReset)
+;	(set! metronome (+ 1 metronome))
+;	)
+;	
+;	;Utilizzare beatThreshold per contare presunti picchi su (gh 0) - negli ultimi 2 secondi
+;	(if (> (gh 0) beatThreshold) 
+;		(set! lastTimeframePeaks (+ 1 lastTimeframePeaks))
+;		(set! lastTimeframePeaks (+ 0 lastTimeframePeaks))
+;		)
+;)
 
 
 
@@ -82,7 +82,7 @@
 
 (define (psysVelReset)
 	(with-primitive prtclSys
-		(pdata-map! (lambda (vel) (vmul (rndvec) 1)) "vel")	
+		(lambda (vel) (vadd vel (vector (* velGain (rndval) (gh 0)) (* velGain (rndval) (gh 0)) (* velGain (rndval) (gh 0)))))	
 	)
 	
 )
@@ -111,7 +111,7 @@
 (define (pulse base_dir shapeOne shapeTwo shapeThree pulseRedLightness pulseGreenLightness pulseBlueLightness pulseScale pulseRotX pulseRotY pulseRotZ)
     
     ;Detect peaks density
-    (beatDetect)
+    ;(beatDetect)
     
     ; Include keybindings
     (load (string-append base_dir "lib/keys.scm"))

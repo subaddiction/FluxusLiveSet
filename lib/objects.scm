@@ -259,6 +259,6 @@
 (define nucleus 0)
 (define psysInterference 0)
 
-(define velGain .5)
+(define velGain 2)
 (define colGain 2)
 (define pcolGain 2)
