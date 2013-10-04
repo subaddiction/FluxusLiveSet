@@ -1,7 +1,3 @@
-(clear)
-(clear-texture-cache)
-;(opacity 0.1)
-
 ;BACKGROUNDZ
 ;(define BG00 (with-state
 ;		(texture (load-texture (string-append base_dir "textures/test.png")))
@@ -263,6 +259,6 @@
 (define nucleus 0)
 (define psysInterference 0)
 
-(define velGain .05)
-(define colGain .1)
-(define pcolGain .2)
+(define velGain .5)
+(define colGain 2)
+(define pcolGain 2)

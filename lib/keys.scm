@@ -288,7 +288,7 @@
 	(psys4VelReset)
 )
 
-(when (key-pressed "1")
+(when (key-pressed "Q")
 	(with-primitive prtclSys
 		(texture (load-texture (string-append base_dir "textures/zebra.png")))
 		;(pdata-map! (lambda (c) (vector (gh 0) (gh 4) (gh 8))) "c")
@@ -297,7 +297,7 @@
 	(psysVelReset)
 )
 
-(when (key-pressed "2")
+(when (key-pressed "W")
 	(with-primitive prtclSys
 		(texture (load-texture (string-append base_dir "textures/triangolo_booty.png")))
 	)
@@ -305,7 +305,7 @@
 	(psysVelReset)
 )
 
-(when (key-pressed "3")
+(when (key-pressed "E")
 	(with-primitive prtclSys
 		(texture (load-texture (string-append base_dir "textures/quadrato_bra.png")))
 	)
@@ -313,7 +313,7 @@
 	(psysVelReset)
 )
 
-(when (key-pressed "4")
+(when (key-pressed "R")
 	(with-primitive prtclSys
 		(texture (load-texture (string-append base_dir "textures/leopard.png")))
 	)
@@ -321,7 +321,7 @@
 	(psysVelReset)
 )
 
-(when (key-pressed "5")
+(when (key-pressed "T")
 	(with-primitive prtclSys
 		(texture (load-texture (string-append base_dir "textures/ghettoblaster.png")))
 	)
@@ -329,7 +329,7 @@
 	(psysVelReset)
 )
 
-(when (key-pressed "6")
+(when (key-pressed "Y")
 	(with-primitive prtclSys
 		(texture (load-texture (string-append base_dir "textures/cerchio_rock.png")))
 	)
@@ -337,7 +337,7 @@
 	(psysVelReset)
 )
 
-(when (key-pressed "7")
+(when (key-pressed "U")
 	(with-primitive prtclSys
 		(texture (load-texture (string-append base_dir "textures/cerchio_panda.png")))
 	)
@@ -345,7 +345,7 @@
 	(psysVelReset)
 )
 
-(when (key-pressed "8")
+(when (key-pressed "I")
 	(with-primitive prtclSys
 		(texture (load-texture (string-append base_dir "textures/cerchio_cuffie.png")))
 	)
@@ -353,7 +353,7 @@
 	(psysVelReset)
 )
 
-(when (key-pressed "9")
+(when (key-pressed "O")
 	(with-primitive prtclSys
 		(texture (load-texture (string-append base_dir "textures/fruit1.png")))
 	)
@@ -361,7 +361,7 @@
 	(psysVelReset)
 )
 
-(when (key-pressed "0")
+(when (key-pressed "P")
 	(with-primitive prtclSys
 		(texture (load-texture (string-append base_dir "textures/fruit2.png")))
 	)
