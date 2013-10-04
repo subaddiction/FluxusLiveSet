@@ -126,7 +126,8 @@
 	    	(rotate (vector (* 0.01 (gh 0) pulseRotX) (* 0.01 (gh 0) pulseRotY) (* 0.01 (gh 0) pulseRotZ)))
 	    	
 	    	;Colorize particles
-	    	(pdata-map! (lambda (c) (vector (gh 0) (gh 4) (gh 8) 1)) "c")
+	    	;(pdata-map! (lambda (c) (vector (gh 0) (gh 4) (gh 8) 1)) "c")
+	    	(pdata-map! (lambda (c) (vmul prtclSysColor (* pcolGain (gh 0)))) "c")
 	    	
 		; update the velocities
 		(pdata-map! 
@@ -145,7 +146,7 @@
 	    	
 	    	;Colorize particles
 	    	;(pdata-map! (lambda (c) (vector (gh 0) (gh 4) (gh 8))) "c")
-	    	(pdata-map! (lambda (c) (vmul prtclSys2Color (* .1 (gh 0)))) "c")
+	    	(pdata-map! (lambda (c) (vmul prtclSys2Color (* pcolGain (gh 0)))) "c")
 	    	
 		; update the velocities
 		(pdata-map! 
@@ -164,7 +165,7 @@
 	    	(rotate (vector (/ (gh 0) -3) (/ (gh 0) 6) 0))
 	    	
 	    	;Colorize particles
-	    	(pdata-map! (lambda (c) (vmul prtclSys3Color (* .1 (gh 0)))) "c")
+	    	(pdata-map! (lambda (c) (vmul prtclSys3Color (* pcolGain (gh 0)))) "c")
 	    	
 		; update the velocities
 		(pdata-map! 
@@ -183,7 +184,7 @@
 	    	(rotate (vector (/ (gh 0) -6) 0 (/ (gh 0) -3)))
 	    	
 	    	;Colorize particles
-	    	(pdata-map! (lambda (c) (vmul prtclSys4Color (* .1 (gh 0)))) "c")
+	    	(pdata-map! (lambda (c) (vmul prtclSys4Color (* pcolGain (gh 0)))) "c")
 	    	
 		; update the velocities
 		(pdata-map! 
@@ -211,7 +212,7 @@
         (set! accumRot0 (vadd accumRot0 (vector (* .06 (gh 0) pulseRotX) (* .06 (gh 0) pulseRotY) (* .06 (gh 0) pulseRotZ))))
         (rotate accumRot0)
         
-        (colour (vector (* (gh 0) pulseRedLightness) (* (gh 2) pulseGreenLightness) (* (gh 4) pulseBlueLightness)))
+        (colour (vector (* colGain (gh 0) pulseRedLightness) (* colGain (gh 2) pulseGreenLightness) (* colGain (gh 4) pulseBlueLightness)))
         
         (if (> nucleus 0)
         	(draw-instance shapeOne)
@@ -222,14 +223,14 @@
         (set! accumRot1 (vadd accumRot1 (vector (* .06 (gh 0) pulseRotX) (* .06 (gh 0) pulseRotY) (* .06 (gh 0) pulseRotZ))))
         (rotate accumRot1)
         
-        (colour (vector (* (gh 4) pulseRedLightness) (* (gh 2) pulseGreenLightness) (* (gh 0) pulseBlueLightness)))
+        (colour (vector (* colGain (gh 4) pulseRedLightness) (* colGain (gh 2) pulseGreenLightness) (* colGain (gh 0) pulseBlueLightness)))
         (draw-instance shapeTwo)
         
         ;SHAPE 3
         (set! accumRot2 (vadd accumRot2 (vector (* .06 (gh 0) pulseRotX) (* .06 (gh 0) pulseRotY) (* .06 (gh 0) pulseRotZ))))
         (rotate accumRot2)
 	
-        (colour (vector (* (gh 2) pulseRedLightness) (* (gh 4) pulseGreenLightness) (* (gh 0) pulseBlueLightness)))
+        (colour (vector (* colGain (gh 2) pulseRedLightness) (* colGain (gh 4) pulseGreenLightness) (* colGain (gh 0) pulseBlueLightness)))
         (draw-instance shapeThree)
         
         

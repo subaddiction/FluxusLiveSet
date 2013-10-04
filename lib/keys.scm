@@ -37,28 +37,28 @@
 
 ; Shape schemes
 (when (key-pressed "q")
-	(shapeSchema hexA piramidiring triangolisphere)
+	(shapeSchema WR_01 piramidiring triangolisphere)
 	(particlesReset prtclSys4)
 	(psys3VelReset)
 	(set! prtclSys4Color (vector 1 .5 1))
 )
 
 (when (key-pressed "w")
-	(shapeSchema triA piramidisphere triangoliring)
+	(shapeSchema RAYNA_01 piramidisphere triangoliring)
 	(particlesReset prtclSys4)
 	(psys3VelReset)
 	(set! prtclSys4Color (vector 1 0 .5))
 )
 
 (when (key-pressed "e")
-	(shapeSchema triB triangoloBig piramidiring)
+	(shapeSchema RAYNA_02 triangoloBig piramidiring)
 	(particlesReset prtclSys4)
 	(psys3VelReset)
 	(set! prtclSys4Color (vector 1 0 0))
 )
 
 (when (key-pressed "r")
-	(shapeSchema triC triangoliring triangoloBig)
+	(shapeSchema wl_logo triangoliring triangoloBig)
 	(particlesReset prtclSys4)
 	(psys3VelReset)
 	(set! prtclSys4Color (vector 0 0 1))
@@ -68,39 +68,39 @@
 	(particlesReset prtclSys4)
 	(psys3VelReset)
 	(set! prtclSys4Color (vector 1 .3 1))
-	(shapeSchema moleculeA triangoloBig piramidiring)
+	(shapeSchema pandapartyinner triangoloBig piramidiring)
 )
 
 (when (key-pressed "y")
-	(shapeSchema nautilus triangoloBig triangoliring)
+	(shapeSchema pandapartyouter triangoloBig triangoliring)
 	(particlesReset prtclSys4)
 	(psys3VelReset)
 	(set! prtclSys4Color (vector 0 1 .3))	
 )
 
 (when (key-pressed "u")
-	(shapeSchema triangolo triangoliring piramidisphere)
+	(shapeSchema partybass triangoliring piramidisphere)
 	(particlesReset prtclSys4)
 	(psys3VelReset)
 	(set! prtclSys4Color (vector 1 .5 0))	
 )
 
 (when (key-pressed "i")
-	(shapeSchema electroswingitalia piramidiring triangolisphere)
+	(shapeSchema partyeverynight piramidiring triangolisphere)
 	(particlesReset prtclSys4)
 	(psys3VelReset)
 	(set! prtclSys4Color (vector .3 .5 1))
 )
 
 (when (key-pressed "o")
-	(shapeSchema triangolo triangolisphere piramidiring)
+	(shapeSchema baila triangolisphere piramidiring)
 	(particlesReset prtclSys4)
 	(psys3VelReset)
 	(set! prtclSys4Color (vector .3 1 .5))
 )
 
 (when (key-pressed "p")
-	(shapeSchema electroswingitalia triangoliring piramidisphere)
+	(shapeSchema wr_logo triangoliring piramidisphere)
 	(particlesReset prtclSys4)
 	(psys3VelReset)
 	(set! prtclSys4Color (vector 1 1 .3))
@@ -111,21 +111,21 @@
 
 
 (when (key-pressed "a")
-	(shapeSchema electroswingitalia triangoliring bigring)
+	(shapeSchema yo triangoliring bigring)
 	(particlesReset prtclSys3)
 	(psys3VelReset)
 	(set! prtclSys3Color (vector 0 .5 1))
 )
 
 (when (key-pressed "s")
-	(shapeSchema nautilus piramidiring triangolisphere)
+	(shapeSchema swagger piramidiring triangolisphere)
 	(particlesReset prtclSys3)
 	(psys3VelReset)
 	(set! prtclSys3Color (vector 1 1 0))
 )
 
 (when (key-pressed "d")
-	(shapeSchema electroswingitalia triangoliring piramidiring)
+	(shapeSchema nautilus triangoliring piramidiring)
 	(particlesReset prtclSys3)
 	(psys3VelReset)
 	(set! prtclSys3Color (vector 1 0 1))
@@ -290,7 +290,7 @@
 
 (when (key-pressed "1")
 	(with-primitive prtclSys
-		(texture (load-texture ""))
+		(texture (load-texture (string-append base_dir "textures/zebra.png")))
 		;(pdata-map! (lambda (c) (vector (gh 0) (gh 4) (gh 8))) "c")
 	)
 	(particlesReset prtclSys)
@@ -299,7 +299,7 @@
 
 (when (key-pressed "2")
 	(with-primitive prtclSys
-		(texture (load-texture (string-append base_dir "textures/texture2.png")))
+		(texture (load-texture (string-append base_dir "textures/triangolo_booty.png")))
 	)
 	(particlesReset prtclSys)
 	(psysVelReset)
@@ -307,7 +307,7 @@
 
 (when (key-pressed "3")
 	(with-primitive prtclSys
-		(texture (load-texture (string-append base_dir "textures/texture3.png")))
+		(texture (load-texture (string-append base_dir "textures/quadrato_bra.png")))
 	)
 	(particlesReset prtclSys)
 	(psysVelReset)
@@ -315,7 +315,7 @@
 
 (when (key-pressed "4")
 	(with-primitive prtclSys
-		(texture (load-texture (string-append base_dir "textures/texture4.png")))
+		(texture (load-texture (string-append base_dir "textures/leopard.png")))
 	)
 	(particlesReset prtclSys)
 	(psysVelReset)
@@ -323,7 +323,7 @@
 
 (when (key-pressed "5")
 	(with-primitive prtclSys
-		(texture (load-texture (string-append base_dir "textures/texture5.png")))
+		(texture (load-texture (string-append base_dir "textures/ghettoblaster.png")))
 	)
 	(particlesReset prtclSys)
 	(psysVelReset)
@@ -331,7 +331,7 @@
 
 (when (key-pressed "6")
 	(with-primitive prtclSys
-		(texture (load-texture (string-append base_dir "textures/texture6.png")))
+		(texture (load-texture (string-append base_dir "textures/cerchio_rock.png")))
 	)
 	(particlesReset prtclSys)
 	(psysVelReset)
@@ -339,7 +339,7 @@
 
 (when (key-pressed "7")
 	(with-primitive prtclSys
-		(texture (load-texture (string-append base_dir "textures/texture7.png")))
+		(texture (load-texture (string-append base_dir "textures/cerchio_panda.png")))
 	)
 	(particlesReset prtclSys)
 	(psysVelReset)
@@ -347,7 +347,7 @@
 
 (when (key-pressed "8")
 	(with-primitive prtclSys
-		(texture (load-texture (string-append base_dir "textures/texture8.png")))
+		(texture (load-texture (string-append base_dir "textures/cerchio_cuffie.png")))
 	)
 	(particlesReset prtclSys)
 	(psysVelReset)
@@ -355,7 +355,7 @@
 
 (when (key-pressed "9")
 	(with-primitive prtclSys
-		(texture (load-texture (string-append base_dir "textures/texture9.png")))
+		(texture (load-texture (string-append base_dir "textures/fruit1.png")))
 	)
 	(particlesReset prtclSys)
 	(psysVelReset)
@@ -363,7 +363,7 @@
 
 (when (key-pressed "0")
 	(with-primitive prtclSys
-		(texture (load-texture (string-append base_dir "textures/texture0.png")))
+		(texture (load-texture (string-append base_dir "textures/fruit2.png")))
 	)
 	(particlesReset prtclSys)
 	(psysVelReset)

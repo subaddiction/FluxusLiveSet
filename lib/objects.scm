@@ -40,6 +40,7 @@
   
     
 )
+(define prtclSysColor (vector 1 1 1))
 ;(with-primitive prtclSys (hide 1))
 
 
@@ -169,16 +170,52 @@
 
 
 ;lettering
-;(define pandaparty (with-state (load-primitive (string-append base_dir "obj/panda_party.obj"))))
-;(define pandapartyinner (with-state (load-primitive (string-append base_dir "obj/panda_party_inner.obj"))))
-;(define pandapartyouter (with-state (load-primitive (string-append base_dir "obj/panda_party_outer.obj"))))
-;(define wl_logo (with-state (load-primitive (string-append base_dir "obj/wl_logo.obj"))))
-;(define wr_logo (with-state (load-primitive (string-append base_dir "obj/wr_logo.obj"))))
-;(define wobble (with-state (load-primitive (string-append base_dir "obj/wobble.obj"))))
-;(define baila (with-state (load-primitive (string-append base_dir "obj/baila.obj"))))
-;(define meduele (with-state (load-primitive (string-append base_dir "obj/meduele.obj"))))
-;(define swagger (with-state (load-primitive (string-append base_dir "obj/swagger.obj"))))
-;(define yo (with-state (load-primitive (string-append base_dir "obj/yo.obj"))))
+(define pandaparty (with-state (load-primitive (string-append base_dir "obj/panda_party.obj"))))
+(with-primitive pandaparty (hide 1))
+
+(define pandapartyinner (with-state (load-primitive (string-append base_dir "obj/panda_party_inner.obj"))))
+(with-primitive pandapartyinner (hide 1))
+
+(define pandapartyouter (with-state (load-primitive (string-append base_dir "obj/panda_party_outer.obj"))))
+(with-primitive pandapartyouter (hide 1))
+
+(define wl_logo (with-state (load-primitive (string-append base_dir "obj/wl_logo.obj"))))
+(with-primitive wl_logo (hide 1))
+
+(define wr_logo (with-state (load-primitive (string-append base_dir "obj/wr_logo.obj"))))
+(with-primitive wr_logo (hide 1))
+
+(define wobble (with-state (load-primitive (string-append base_dir "obj/wobble.obj"))))
+(with-primitive wobble (hide 1))
+
+(define partybass (with-state (load-primitive (string-append base_dir "obj/partybass.obj"))))
+(with-primitive partybass (hide 1))
+
+(define partyeverynight (with-state (load-primitive (string-append base_dir "obj/partyeverynight.obj"))))
+(with-primitive partyeverynight (hide 1))
+
+(define baila (with-state (load-primitive (string-append base_dir "obj/baila.obj"))))
+(with-primitive baila (hide 1))
+
+(define swagger (with-state (load-primitive (string-append base_dir "obj/swagger.obj"))))
+(with-primitive swagger (hide 1))
+
+(define yo (with-state (load-primitive (string-append base_dir "obj/yo.obj"))))
+(with-primitive yo (hide 1))
+
+;;;;;
+
+(define WR_01 (with-state (load-primitive (string-append base_dir "obj/WR_01.obj"))))
+(with-primitive WR_01 (hide 1))
+
+(define WR_03 (with-state (load-primitive (string-append base_dir "obj/WR_03.obj"))))
+(with-primitive WR_03 (hide 1))
+
+(define RAYNA_01 (with-state (load-primitive (string-append base_dir "obj/rayna_01.obj"))))
+(with-primitive RAYNA_01 (hide 1))
+
+(define RAYNA_02 (with-state (load-primitive (string-append base_dir "obj/rayna_02.obj"))))
+(with-primitive RAYNA_02 (hide 1))
 
 
 
@@ -226,4 +263,6 @@
 (define nucleus 0)
 (define psysInterference 0)
 
-(define velGain .1)
+(define velGain .05)
+(define colGain .1)
+(define pcolGain .2)
