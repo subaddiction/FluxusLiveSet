@@ -1,3 +1,5 @@
+(clear)
+(clear-texture-cache)
 ;BACKGROUNDZ
 ;(define BG00 (with-state
 ;		(texture (load-texture (string-append base_dir "textures/test.png")))
@@ -31,7 +33,7 @@
 	;init particles size
 	(pdata-map! (lambda (s) (vector .5 .5 .5)) "s")
 	; init all the colours
-	(pdata-map! (lambda (c) (vector 0 0 0 0)) "c")
+	;(pdata-map! (lambda (c) (vector 0 0 0 0)) "c")
 
   
     
@@ -251,12 +253,12 @@
 (define accumRot1 (vector 0 0 0))
 (define accumRot2 (vector 0 0 0))
 
-(define beatThreshold 1)
+(define beatThreshold 0)
 (define metronome 0)
 (define timeFrame 6)
 (define lastTimeframePeaks 0)
 (define peaksDensity 0)
-(define nucleus 0)
+(define nucleus 1)
 (define psysInterference 0)
 
 (define velGain 2)

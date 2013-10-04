@@ -1,8 +1,6 @@
 ; _start.scm
 ; primo file da caricare.
 ; Definisce directory di lavoro e carica librerie, oggetti e textures.
-(clear)
-(clear-texture-cache)
 (reset-camera)
 
 ; Base directory

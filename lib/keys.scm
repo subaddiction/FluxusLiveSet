@@ -13,7 +13,7 @@
 	(set! baseScale (* 100 (midi-ccn 2 10)))
 	
 	; knob4
-	;(set! beatThreshold (* 100 (midi-ccn 3 10)))
+	(set! beatThreshold (* 100 (midi-ccn 3 10)))
 	
 	; Fader 1 2 3 RGB
 	(colorSchema (midi-ccn 0 7) (midi-ccn 1 7) (midi-ccn 2 7))
@@ -259,6 +259,7 @@
 	(with-primitive prtclSys
 		(texture (load-texture ""))
 	)
+	(set! prtclSysColor (vector 1 1 1))
 	
 	(with-primitive prtclSys2
 		(texture (load-texture ""))
