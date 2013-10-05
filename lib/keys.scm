@@ -369,3 +369,90 @@
 	(particlesReset prtclSys)
 	(psysVelReset)
 )
+
+
+
+;;;;;
+
+
+
+;(when (key-pressed "1")
+;(with-primitive prtclSys
+;(texture (load-texture (string-append base_dir "textures/texture.png")))
+;;(pdata-map! (lambda (c) (vector (gh 0) (gh 4) (gh 8))) "c")
+;)
+;(particlesReset prtclSys)
+;(psysVelReset)
+;)
+
+(when (key-pressed "A")
+(with-primitive prtclSys
+(texture (load-texture (string-append base_dir "textures/texture2.png")))
+)
+(particlesReset prtclSys)
+(psysVelReset)
+)
+
+(when (key-pressed "S")
+(with-primitive prtclSys
+(texture (load-texture (string-append base_dir "textures/texture3.png")))
+)
+(particlesReset prtclSys)
+(psysVelReset)
+)
+
+(when (key-pressed "D")
+(with-primitive prtclSys
+(texture (load-texture (string-append base_dir "textures/texture4.png")))
+)
+(particlesReset prtclSys)
+(psysVelReset)
+)
+
+(when (key-pressed "F")
+(with-primitive prtclSys
+(texture (load-texture (string-append base_dir "textures/texture5.png")))
+)
+(particlesReset prtclSys)
+(psysVelReset)
+)
+
+(when (key-pressed "G")
+(with-primitive prtclSys
+(texture (load-texture (string-append base_dir "textures/texture6.png")))
+)
+(particlesReset prtclSys)
+(psysVelReset)
+)
+
+(when (key-pressed "H")
+(with-primitive prtclSys
+(texture (load-texture (string-append base_dir "textures/texture7.png")))
+)
+(particlesReset prtclSys)
+(psysVelReset)
+)
+
+(when (key-pressed "J")
+(with-primitive prtclSys
+(texture (load-texture (string-append base_dir "textures/texture8.png")))
+)
+(particlesReset prtclSys)
+(psysVelReset)
+)
+
+(when (key-pressed "K")
+(with-primitive prtclSys
+(texture (load-texture (string-append base_dir "textures/texture9.png")))
+)
+(particlesReset prtclSys)
+(psysVelReset)
+)
+
+(when (key-pressed "L")
+(with-primitive prtclSys
+(texture (load-texture (string-append base_dir "textures/texture0.png")))
+)
+(particlesReset prtclSys)
+(psysVelReset)
+)
