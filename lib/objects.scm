@@ -116,8 +116,8 @@
 
 
 ; GEOMETRY
-(define triangolo (with-state (load-primitive (string-append base_dir "obj/triangolo.obj"))))
-(with-primitive triangolo (hide 1))
+;(define triangolo (with-state (load-primitive (string-append base_dir "obj/triangolo.obj"))))
+;(with-primitive triangolo (hide 1))
 
 (define triangoloBig (with-state (load-primitive (string-append base_dir "obj/triangoloBig.obj"))))
 (with-primitive triangoloBig (hide 1))
@@ -160,67 +160,33 @@
 
 
 ; CREWS
-(define electroswingitalia (with-state (load-primitive (string-append base_dir "obj/electroswingitalia.obj"))))
-(with-primitive electroswingitalia (hide 1))
+;(define electroswingitalia (with-state (load-primitive (string-append base_dir "obj/electroswingitalia.obj"))))
+;(with-primitive electroswingitalia (hide 1))
 
 (define subaddiction (with-state (load-primitive (string-append base_dir "obj/subaddiction.obj"))))
 (with-primitive subaddiction (hide 1))
 
 
-;lettering
-(define pandaparty (with-state (load-primitive (string-append base_dir "obj/panda_party.obj"))))
-(with-primitive pandaparty (hide 1))
+;;;;;;;;;
+; lettering
 
-(define pandapartyinner (with-state (load-primitive (string-append base_dir "obj/panda_party_inner.obj"))))
-(with-primitive pandapartyinner (hide 1))
+(define gatopreto03 (with-state (load-primitive (string-append base_dir "obj/gatopreto03.obj"))))
+(with-primitive gatopreto03 (hide 1))
 
-(define pandapartyouter (with-state (load-primitive (string-append base_dir "obj/panda_party_outer.obj"))))
-(with-primitive pandapartyouter (hide 1))
+(define gatopreto04 (with-state (load-primitive (string-append base_dir "obj/gatopreto04.obj"))))
+(with-primitive gatopreto04 (hide 1))
 
-(define wl_logo (with-state (load-primitive (string-append base_dir "obj/wl_logo.obj"))))
-(with-primitive wl_logo (hide 1))
+(define yodha01 (with-state (load-primitive (string-append base_dir "obj/yodha01.obj"))))
+(with-primitive yodha01 (hide 1))
 
-(define wr_logo (with-state (load-primitive (string-append base_dir "obj/wr_logo.obj"))))
-(with-primitive wr_logo (hide 1))
+(define yodha02 (with-state (load-primitive (string-append base_dir "obj/yodha02.obj"))))
+(with-primitive yodha02 (hide 1))
 
-(define wobble (with-state (load-primitive (string-append base_dir "obj/wobble.obj"))))
-(with-primitive wobble (hide 1))
-
-(define partybass (with-state (load-primitive (string-append base_dir "obj/partybass.obj"))))
-(with-primitive partybass (hide 1))
-
-(define partyeverynight (with-state (load-primitive (string-append base_dir "obj/partyeverynight.obj"))))
-(with-primitive partyeverynight (hide 1))
-
-(define baila (with-state (load-primitive (string-append base_dir "obj/baila.obj"))))
-(with-primitive baila (hide 1))
-
-(define swagger (with-state (load-primitive (string-append base_dir "obj/swagger.obj"))))
-(with-primitive swagger (hide 1))
-
-(define yo (with-state (load-primitive (string-append base_dir "obj/yo.obj"))))
-(with-primitive yo (hide 1))
-
-;;;;;
-
-(define WR_01 (with-state (load-primitive (string-append base_dir "obj/WR_01.obj"))))
-(with-primitive WR_01 (hide 1))
+(define kinkybusiness (with-state (load-primitive (string-append base_dir "obj/kinkybusiness.obj"))))
+(with-primitive kinkybusiness (hide 1))
 
 (define WR_03 (with-state (load-primitive (string-append base_dir "obj/WR_03.obj"))))
 (with-primitive WR_03 (hide 1))
-
-(define RAYNA_01 (with-state (load-primitive (string-append base_dir "obj/rayna_01.obj"))))
-(with-primitive RAYNA_01 (hide 1))
-
-(define RAYNA_02 (with-state (load-primitive (string-append base_dir "obj/rayna_02.obj"))))
-(with-primitive RAYNA_02 (hide 1))
-
-
-
-    
-    
-
-
 
 
 ;Add objects to library with:

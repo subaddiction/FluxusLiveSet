@@ -4,7 +4,7 @@
 (reset-camera)
 
 ; Base directory
-(define base_dir "/Users/Shared/fluxus/FluxusLiveSet-wobble-01/")
+(define base_dir "/Users/Shared/fluxus/FluxusLiveSet-wobble-02/")
 
 ; Include general config
 (load (string-append base_dir "lib/config_osx.scm"))
