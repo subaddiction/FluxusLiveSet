@@ -376,15 +376,6 @@
 
 
 
-;(when (key-pressed "1")
-;(with-primitive prtclSys
-;(texture (load-texture (string-append base_dir "textures/texture.png")))
-;;(pdata-map! (lambda (c) (vector (gh 0) (gh 4) (gh 8))) "c")
-;)
-;(particlesReset prtclSys)
-;(psysVelReset)
-;)
-
 (when (key-pressed "A")
 (with-primitive prtclSys
 (texture (load-texture (string-append base_dir "textures/texture2.png")))
