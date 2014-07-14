@@ -1,17 +1,20 @@
 (clear)
+(clear-texture-cache)
 (reset-camera)
 
-; keyframe Debian GNU/Linux
-(start-audio "alsa_pcm:capture_1" 1024 44100)
+; Archimede Debian7 GNU/Linux
+(set-projection-transform (vector 1 0 0 0 0 16/9 0 0 0 0 -1 -1 0 0 -2 0))
+(start-audio "system:capture_1" 1024 44100)
 
 (midiin-open 1)
 
 (gain 0.2)
 
-(load (string-append base_dir "lib/objects.scm"))
-
 (ambient 0)
 ;(blur 0)
 ;(desiredfps 24)
+
+
+
 
 

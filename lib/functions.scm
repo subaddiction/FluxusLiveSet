@@ -100,7 +100,7 @@
 
 (define (psysVelReset)
 	(with-primitive prtclSys
-		(pdata-map! (lambda (vel) (vmul (rndvec) 2)) "vel")	
+		(pdata-map! (lambda (vel) (vmul (rndvec) 1)) "vel")	
 	)
 	
 )
@@ -266,22 +266,25 @@
         
         
         ;NEW ROTATION - ADDITION
-        (set! accumRot0 (vadd accumRot0 (vector (* .06 (gh 0) pulseRotX) (* .06 (gh 0) pulseRotY) (* .06 (gh 0) pulseRotZ))))
-        (rotate accumRot0)
+        ;(set! accumRot0 (vadd accumRot0 (vector (* .06 (gh 0) pulseRotX) (* .06 (gh 0) pulseRotY) (* .06 (gh 0) pulseRotZ))))
+        ;(rotate accumRot0)
         
         ;(rotate (vector (- (* 1.5 (gh 8) pulseRotX) 0.75) (- (* 3 (gh 0) (sin (time)) pulseRotY) 1.5) (- (* 0.3 (gh 8) pulseRotZ) 0.15)))
-        ;(rotate (vector (gh 16) (gh 16) (gh 16)))
+        ;(rotate (vector (* (gh 0) pulseRotX) (* (gh 0) pulseRotY) (* (gh 0) pulseRotZ)))
+        
+
         
         ;(with-primitive shapeOne (hide 0))
-        (colour (vector (* (gh 0) pulseRedLightness) (* (gh 2) pulseGreenLightness) (* (gh 4) pulseBlueLightness)))
+        (colour (vector (/ (* (gh 0) pulseRedLightness) 12.7) (/ (* (gh 2) pulseGreenLightness) 12.7) (/ (* (gh 4) pulseBlueLightness) 12.7)))
         
         (if (> nucleus 0)
-        	(draw-instance shapeOne)
-        	(set! nucleus 0)
+        		(with-state (rotate (vector 0 (- (* 1 (gh 0) (sin (time)) pulseRotY) .5) 0)) (draw-instance shapeOne))
+        		(set! nucleus 0)
         )
         
         ;NEW ROTATION - ADDITION
-        (set! accumRot1 (vadd accumRot1 (vector (* .06 (gh 0) pulseRotX) (* .06 (gh 0) pulseRotY) (* .06 (gh 0) pulseRotZ))))
+        ;(set! accumRot1 (vadd accumRot1 (vector (* .06 (gh 0) pulseRotX) (* .06 (gh 0) pulseRotY) (* .06 (gh 0) pulseRotZ))))
+        (set! accumRot1 (vadd accumRot1 (vector (* .12 (gh 0) pulseRotX) (* .12 (gh 0) pulseRotY) (* .12 (gh 0) pulseRotZ))))
         (rotate accumRot1)
         
         ;(rotate (vector (* 6 (gh 0) pulseRotX) (* 6 (gh 0) pulseRotY) (* 6 (gh 0) pulseRotZ)))
@@ -289,7 +292,7 @@
         
         
         ;(with-primitive shapeTwo (hide 0))
-        (colour (vector (* (gh 4) pulseRedLightness) (* (gh 2) pulseGreenLightness) (* (gh 0) pulseBlueLightness)))
+        (colour (vector (/ (* (gh 4) pulseRedLightness) 12.7) (/ (* (gh 2) pulseGreenLightness) 12.7) (/ (* (gh 0) pulseBlueLightness) 12.7)))
         (draw-instance shapeTwo)
         
         ;NEW ROTATION - ADDITION
@@ -300,7 +303,7 @@
         ;(rotate (vector (* 6 (gh 1) pulseRotY) (* 6 (gh 1) pulseRotZ) (* 6 (gh 1) pulseRotX)))
         
         ;(with-primitive shapeThree (hide 0))
-        (colour (vector (* (gh 2) pulseRedLightness) (* (gh 4) pulseGreenLightness) (* (gh 0) pulseBlueLightness)))
+        (colour (vector (/ (* (gh 2) pulseRedLightness) 12.7) (/ (* (gh 0) pulseGreenLightness) 12.7) (/ (* (gh 4) pulseBlueLightness) 12.7)))
         (draw-instance shapeThree)
         
         

@@ -1,5 +1,3 @@
-(clear)
-(clear-texture-cache)
 ;(opacity 0.1)
 
 ;BACKGROUNDZ
