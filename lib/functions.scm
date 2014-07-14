@@ -150,7 +150,8 @@
 		; update the velocities
 		(pdata-map! 
 		   ;(lambda (vel) (vmul (rndvec) 1))
-		   (lambda (vel) (vadd vel (vector (* 0.000001 (gh 8) pulseScale) (* 0.000001 (gh 8) pulseScale) (* 0.000001 (gh 8) pulseScale))))
+		   ;(lambda (vel) (vadd vel (vector (* 0.000001 (gh 8) pulseScale) (* 0.000001 (gh 8) pulseScale) (* 0.000001 (gh 8) pulseScale))))
+		   (lambda (vel) (vadd vel (vector (* 0.000002 (gh 8)) (* 0.000002 (gh 8)) (* 0.000002 (gh 8)))))
 		   ;(vector (* (gh 0) pulseScale) (* (gh 0) pulseScale) (* (gh 0) pulseScale))
 		   "vel")
 
@@ -181,7 +182,7 @@
 	    	
 		; update the velocities
 		(pdata-map! 
-		    (lambda (vel) (vadd vel (vector 0 (* .1 (rndval) (gh 0)) (* .1 (rndval) (gh 0))))) ; (* .01 (rndval) (gh 0))
+		    (lambda (vel) (vadd vel (vector 0 (* .05 (rndval) (gh 0)) (* .05 (rndval) (gh 0))))) ; (* .05 (rndval) (gh 0))
 		    
 		    ;lambda (vel) (vadd vel (vector .1 .1 .1)))
 		    ;(vector (* (gh 0) pulseScale) (* (gh 0) pulseScale) (* (gh 0) pulseScale))
@@ -209,7 +210,7 @@
 	    	
 		; update the velocities
 		(pdata-map! 
-		    (lambda (vel) (vadd vel (vector (* .1 (rndval) (gh 0)) (* .1 (rndval) (gh 0)) 0))) ; (* .01 (rndval) (gh 0))
+		    (lambda (vel) (vadd vel (vector (* .05 (rndval) (gh 0)) (* .05 (rndval) (gh 0)) 0))) ; (* .05 (rndval) (gh 0))
 		    
 		    ;lambda (vel) (vadd vel (vector .1 .1 .1)))
 		    ;(vector (* (gh 0) pulseScale) (* (gh 0) pulseScale) (* (gh 0) pulseScale))
@@ -239,7 +240,7 @@
 	    	
 		; update the velocities
 		(pdata-map! 
-		    (lambda (vel) (vadd vel (vector (* .1 (rndval) (gh 0)) 0 (* .1 (rndval) (gh 0))))) ; (* .01 (rndval) (gh 0))
+		    (lambda (vel) (vadd vel (vector (* .05 (rndval) (gh 0)) 0 (* .05 (rndval) (gh 0))))) ; (* .05 (rndval) (gh 0))
 		    
 		    ;lambda (vel) (vadd vel (vector .1 .1 .1)))
 		    ;(vector (* (gh 0) pulseScale) (* (gh 0) pulseScale) (* (gh 0) pulseScale))
@@ -260,6 +261,8 @@
         
         
         ; Animate shapes
+        
+        
         (scale (vector (* (gh 0) pulseScale) (* (gh 0) pulseScale) (* (gh 0) pulseScale)))
         
         (translate (vector (* 0.01 pulseRotX (gh 4)) (* 0.01 pulseRotY (gh 4)) (* 0.01 pulseRotZ (gh 4))))
@@ -282,6 +285,9 @@
         		(set! nucleus 0)
         )
         
+        
+        (scale (vector 4 4 4))
+        
         ;NEW ROTATION - ADDITION
         ;(set! accumRot1 (vadd accumRot1 (vector (* .06 (gh 0) pulseRotX) (* .06 (gh 0) pulseRotY) (* .06 (gh 0) pulseRotZ))))
         (set! accumRot1 (vadd accumRot1 (vector (* .12 (gh 0) pulseRotX) (* .12 (gh 0) pulseRotY) (* .12 (gh 0) pulseRotZ))))
@@ -295,6 +301,8 @@
         (colour (vector (/ (* (gh 4) pulseRedLightness) 12.7) (/ (* (gh 2) pulseGreenLightness) 12.7) (/ (* (gh 0) pulseBlueLightness) 12.7)))
         (draw-instance shapeTwo)
         
+        
+        (scale (vector 2 2 2))
         ;NEW ROTATION - ADDITION
         (set! accumRot2 (vadd accumRot2 (vector (* .06 (gh 0) pulseRotX) (* .06 (gh 0) pulseRotY) (* .06 (gh 0) pulseRotZ))))
         (rotate accumRot2)
@@ -304,7 +312,10 @@
         
         ;(with-primitive shapeThree (hide 0))
         (colour (vector (/ (* (gh 2) pulseRedLightness) 12.7) (/ (* (gh 0) pulseGreenLightness) 12.7) (/ (* (gh 4) pulseBlueLightness) 12.7)))
+        
+        
         (draw-instance shapeThree)
+        
         
         
         ;(begin (display (gh 0)) (newline))
@@ -316,7 +327,7 @@
         ;(begin (display lastTimeframePeaks) (newline))
         ;(begin (display beatThreshold) (newline))
         
-        (begin (display psysInterference) (newline))
+        ;(begin (display psysInterference) (newline))
     
 )
 
