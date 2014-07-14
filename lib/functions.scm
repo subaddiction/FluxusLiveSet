@@ -318,7 +318,24 @@
         
         
         
-        ;(begin (display (gh 0)) (newline))
+        (begin (display (gh 0)) (newline))
+        (begin (display (gh 1)) (newline))
+        (begin (display (gh 2)) (newline))
+        (begin (display (gh 3)) (newline))
+        (begin (display (gh 4)) (newline))
+        (begin (display (gh 5)) (newline))
+        (begin (display (gh 6)) (newline))
+        (begin (display (gh 7)) (newline))
+        (begin (display (gh 8)) (newline))
+        (begin (display (gh 9)) (newline))
+        (begin (display (gh 10)) (newline))
+        (begin (display (gh 11)) (newline))
+        (begin (display (gh 12)) (newline))
+        (begin (display (gh 13)) (newline))
+        (begin (display (gh 14)) (newline))
+        (begin (display (gh 15)) (newline))
+        (begin (newline))
+
         ;(begin (display metronome) (newline))
         ;(begin (display time) (newline))
         ;(begin (display delta) (newline))
