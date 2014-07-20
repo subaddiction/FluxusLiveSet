@@ -173,7 +173,7 @@
 		;(with-state (translate (vector 0 0 -5)))
 	    	
 	    	;(translate (vector 0 0 0))
-	    	(rotate (vector 0 (/ (gh 0) 3) (/ (gh 0) 6)))
+	    	(rotate (vector 0 (/ (gh 0) 30) (/ (gh 0) 60)))
 	    	;(rotate (vector (* 0.01 (gh 8) pulseRotX) (* 0.01 (gh 8) pulseRotY) (* 0.01 (gh 8) pulseRotZ)))
 	    	
 	    	;Colorize particles
@@ -201,7 +201,7 @@
 		;(with-state (translate (vector 0 0 -5)))
 	    	
 	    	;(translate (vector 0 0 0))
-	    	(rotate (vector (/ (gh 0) -3) (/ (gh 0) 6) 0))
+	    	(rotate (vector (/ (gh 0) -30) (/ (gh 0) 60) 0))
 	    	;(rotate (vector (* 0.01 (gh 8) pulseRotX) (* 0.01 (gh 8) pulseRotY) (* 0.01 (gh 8) pulseRotZ)))
 	    	
 	    	;Colorize particles
@@ -231,7 +231,7 @@
 		;(with-state (translate (vector 0 0 -5)))
 	    	
 	    	;(translate (vector 0 0 0))
-	    	(rotate (vector (/ (gh 0) -6) 0 (/ (gh 0) -3)))
+	    	(rotate (vector (/ (gh 0) -60) 0 (/ (gh 0) -30)))
 	    	;(rotate (vector (* 0.01 (gh 8) pulseRotX) (* 0.01 (gh 8) pulseRotY) (* 0.01 (gh 8) pulseRotZ)))
 	    	
 	    	;Colorize particles
@@ -265,7 +265,7 @@
         
         (scale (vector (* (gh 0) pulseScale) (* (gh 0) pulseScale) (* (gh 0) pulseScale)))
         
-        (translate (vector (* 0.01 pulseRotX (gh 4)) (* 0.01 pulseRotY (gh 4)) (* 0.01 pulseRotZ (gh 4))))
+        ;(translate (vector (* 0.01 pulseRotX (gh 4)) (* 0.01 pulseRotY (gh 4)) (* 0.01 pulseRotZ (gh 4))))
         
         
         ;NEW ROTATION - ADDITION
@@ -281,16 +281,16 @@
         (colour (vector (/ (* (gh 0) pulseRedLightness) 12.7) (/ (* (gh 2) pulseGreenLightness) 12.7) (/ (* (gh 4) pulseBlueLightness) 12.7)))
         
         (if (> nucleus 0)
-        		(with-state (rotate (vector 0 (- (* 1 (gh 0) (sin (time)) pulseRotY) .5) 0)) (draw-instance shapeOne))
+        		(with-state (rotate (vector 0 (- (* (gh 0) (sin (time)) pulseRotY) .1) 0)) (draw-instance shapeOne))
         		(set! nucleus 0)
         )
         
         
-        (scale (vector 4 4 4))
+        (scale (vector 3 3 3))
         
         ;NEW ROTATION - ADDITION
         ;(set! accumRot1 (vadd accumRot1 (vector (* .06 (gh 0) pulseRotX) (* .06 (gh 0) pulseRotY) (* .06 (gh 0) pulseRotZ))))
-        (set! accumRot1 (vadd accumRot1 (vector (* .12 (gh 0) pulseRotX) (* .12 (gh 0) pulseRotY) (* .12 (gh 0) pulseRotZ))))
+        (set! accumRot1 (vadd accumRot1 (vector (* .03 (gh 0) pulseRotX) (* .03 (gh 0) pulseRotY) (* .03 (gh 0) pulseRotZ))))
         (rotate accumRot1)
         
         ;(rotate (vector (* 6 (gh 0) pulseRotX) (* 6 (gh 0) pulseRotY) (* 6 (gh 0) pulseRotZ)))
@@ -304,7 +304,7 @@
         
         (scale (vector 2 2 2))
         ;NEW ROTATION - ADDITION
-        (set! accumRot2 (vadd accumRot2 (vector (* .06 (gh 0) pulseRotX) (* .06 (gh 0) pulseRotY) (* .06 (gh 0) pulseRotZ))))
+        (set! accumRot2 (vadd accumRot2 (vector (* .01 (gh 0) pulseRotX) (* .01 (gh 0) pulseRotY) (* .01 (gh 0) pulseRotZ))))
         (rotate accumRot2)
         
         ;(rotate (vector 0 -90 0))

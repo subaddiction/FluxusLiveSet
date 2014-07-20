@@ -130,6 +130,29 @@
 (define kube (with-state (load-primitive (string-append base_dir "obj/kube.obj"))))
 (with-primitive kube (hide 1))
 
+(define lion1 (with-state (load-primitive (string-append base_dir "obj/lion1.obj"))))
+(with-primitive lion1 (hide 1))
+
+
+(define triangolifill (with-state (load-primitive (string-append base_dir "obj/triangolifill.obj"))))
+(with-primitive triangolifill (hide 1))
+(define triangoliodd (with-state (load-primitive (string-append base_dir "obj/triangoliodd.obj"))))
+(with-primitive triangoliodd (hide 1))
+(define quadratifill (with-state (load-primitive (string-append base_dir "obj/quadratifill.obj"))))
+(with-primitive quadratifill (hide 1))
+(define quadratiodd (with-state (load-primitive (string-append base_dir "obj/quadratiodd.obj"))))
+(with-primitive quadratiodd (hide 1))
+(define cerchifill (with-state (load-primitive (string-append base_dir "obj/cerchifill.obj"))))
+(with-primitive cerchifill (hide 1))
+(define cerchiodd (with-state (load-primitive (string-append base_dir "obj/cerchiodd.obj"))))
+(with-primitive cerchiodd (hide 1))
+(define esagonifill (with-state (load-primitive (string-append base_dir "obj/esagonifill.obj"))))
+(with-primitive esagonifill (hide 1))
+(define esagoniodd (with-state (load-primitive (string-append base_dir "obj/esagoniodd.obj"))))
+(with-primitive esagoniodd (hide 1))
+
+
+
 (define smallring (with-state (load-primitive (string-append base_dir "obj/smallring.obj"))))
 (with-primitive smallring (hide 1))
 
